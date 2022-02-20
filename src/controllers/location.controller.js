@@ -1,5 +1,7 @@
 const getLocation = (req, res, next) => {
-  res.json({ msg: 'datos de ubicacion segun ip-api' });
+  const location = req.location;
+
+  res.json({ msg: 'datos de ubicacion segun ip-api', location });
 };
 
 module.exports = getLocation;
