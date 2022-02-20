@@ -15,7 +15,8 @@
   "author": "markosmk",
   "license": "ISC",
   "dependencies": {
-    "express": "4.17.3"
+    "express": "4.17.3",
+    "node-fetch": "^2.6.7"
   },
   "devDependencies": {
     "dotenv": "^16.0.0",
