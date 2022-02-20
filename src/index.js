@@ -1,9 +1,8 @@
 const express = require('express');
 const app = express();
+const routes = require('./routes')
 
-app.get('/', (req, res, next) => {
-  res.json({ msg: 'rutas de clima por aqui' });
-});
+app.use('/v1', routes)
 
 app.listen(8080, () => {
   console.log('servidor conectado');
