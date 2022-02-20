@@ -1,8 +1,21 @@
-const getCurrentWeather = (req, res, next) => {
+const fetch = require('node-fetch');
+const { API_URL_CURRENT_WEATHER } = require('../services/getApiData');
+
+const getCurrentWeather = async (req, res, next) => {
+  // 1) get location of current or city
+  const location = req.location;
+  // 2) get weather current
+  const responseWeather = await fetch(
+    `${API_URL_CURRENT_WEATHER}&lon=${location.lon}&lat=${location.lat}`
+  );
+  const current = await responseWeather.json();
+
   res.json({
-    msg: 'datos de ubicacion de city o ubicacion actual, y el estado actual',
-    city: req.params.city || null,
-    api: process.env.API_KEY || 'nada', // only try
+    msg: 'success',
+    lat: location.lat,
+    lon: location.lon,
+    location,
+    current,
   });
 };
 
