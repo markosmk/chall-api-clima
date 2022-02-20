@@ -1,20 +1,12 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/location', (req, res, next) => {
-  res.json({ msg: 'datos de ubicacion segun ip-api' });
-});
-router.get('/current/:city?', (req, res, next) => {
-  res.json({
-    msg: 'datos de ubicacion de city o ubicacion actual, y el estado actual',
-    city: req.params.city || null,
-  });
-});
-router.get('/forecast/:city?', (req, res, next) => {
-  res.json({
-    msg: 'datos de ubicacion de city o ubicacion actual, y el estado tiempo a 5 dias',
-    city: req.params.city || null,
-  });
-});
+const controllerLocation = require('../controllers/location.controller');
+const controllerCurrent = require('../controllers/current.controller');
+const controllerForecast = require('../controllers/forecast.controller');
+
+router.get('/location', controllerLocation);
+router.get('/current/:city?', controllerCurrent);
+router.get('/forecast/:city?', controllerForecast);
 
 module.exports = router;
