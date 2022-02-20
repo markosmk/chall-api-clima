@@ -1,0 +1,23 @@
+{
+  "name": "chall-api-clima",
+  "version": "1.0.0",
+  "description": "api to handle weather challenge",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "keywords": [
+    "apiRest",
+    "nodejs",
+    "express"
+  ],
+  "author": "markosmk",
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.17.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
